@@ -10,60 +10,60 @@ public class RaindropTest {
 @Test
     public void PlingTest()
     {
-        Assert.assertEquals("Pling",inputvalue.factor(3));
+        Assert.assertEquals("Pling",inputvalue.convertToString(3));
     }
 
     @Test
     public void PlangTest()
     {
-        Assert.assertEquals("Plang",inputvalue.factor(5));
+        Assert.assertEquals("Plang",inputvalue.convertToString(5));
     }
 
     @Test
     public void PlongTest()
     {
-        Assert.assertEquals("Plong",inputvalue.factor(7));
+        Assert.assertEquals("Plong",inputvalue.convertToString(7));
     }
 
     @Test
     public void PlingPlangTest()
     {
-        Assert.assertEquals("PlingPlang",inputvalue.factor(30));
+        Assert.assertEquals("PlingPlang",inputvalue.convertToString(30));
     }
 
     @Test
     public void PlingPlongTest()
     {
-        Assert.assertEquals("PlingPlong",inputvalue.factor(21));
+        Assert.assertEquals("PlingPlong",inputvalue.convertToString(21));
     }
 
     @Test
     public void PlangPlongTest()
     {
-        Assert.assertEquals("PlangPlong",inputvalue.factor(35));
+        Assert.assertEquals("PlangPlong",inputvalue.convertToString(35));
     }
 
     @Test
     public void PlingPlangPlongTest()
     {
-        Assert.assertEquals("PlingPlangPlong",inputvalue.factor(105));
+        Assert.assertEquals("PlingPlangPlong",inputvalue.convertToString(105));
     }
 
     @Test
     public void OutsideScopeOfFactorsTest()
     {
-        Assert.assertEquals("34",inputvalue.factor(34));
+        Assert.assertEquals("34",inputvalue.convertToString(34));
     }
 
     @Test
     public void NegativeInputTest()
     {
-        Assert.assertNotEquals("-34",inputvalue.factor(-34));
+        Assert.assertNotEquals("-34",inputvalue.convertToString(-34));
     }
 
     @Test
     public void ZeroInputValueTest()
     {
-        Assert.assertEquals("",inputvalue.factor(0));
+        Assert.assertEquals("",inputvalue.convertToString(0));
     }
 }
