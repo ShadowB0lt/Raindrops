@@ -2,25 +2,30 @@ package com.sparta.siq;
 
 public class Raindrop {
 
-    public String convertToString(int value) {
+public String convertToString(int value) throws IllegalArgumentException{
 
-        String result = "";
+    String result ="";
 
-        for (int i = 1; i <= value; i++) {
-            if (value % i == 0) {
+    if(value > 0) {
 
-                if (i == 3) {
-                    result += "Pling";
-                } else if (i == 5) {
-                    result += "Plang";
-                } else if (i == 7) {
-                    result += "Plong";
-                } else if (value % 3 != 0 && value % 5 != 0 && value % 7 != 0) {
-                    result = Integer.toString(i);
-                }
-            }
+        if (value % 3 == 0) {
+            result += "Pling";
         }
-        return result;
+        if (value % 5 == 0) {
+            result += "Plang";
+        }
+        if (value % 7 == 0) {
+            result += "Plong";
+        }
+        if (value % 3 != 0 && value % 5 != 0 && value % 7 != 0) {
+            result = Integer.toString(value);
+        }
     }
+    else if(value <=0)
+    {
+        throw new IllegalArgumentException("Enter a value greater than 0");
+    }
+   return result;
+}
 
 }
