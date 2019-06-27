@@ -1,31 +1,33 @@
 package com.sparta.siq;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Raindrop {
 
 public String convertToString(int value) throws IllegalArgumentException{
 
     String result ="";
 
-    if(value > 0) {
+    Map<Integer,String>  storage = new HashMap();
 
-        if (value % 3 == 0) {
-            result += "Pling";
-        }
-        if (value % 5 == 0) {
-            result += "Plang";
-        }
-        if (value % 7 == 0) {
-            result += "Plong";
-        }
-        if (value % 3 != 0 && value % 5 != 0 && value % 7 != 0) {
-            result = Integer.toString(value);
-        }
-    }
-    else if(value <=0)
+    storage.put(3,"Pling");
+    storage.put(5,"Plang");
+    storage.put(7,"Plong");
+    storage.put(9,"Plung");
+
+    for(Map.Entry<Integer,String> entry : storage.entrySet())
     {
-        throw new IllegalArgumentException("Enter a value greater than 0");
+        if(value % entry.getKey() == 0)
+        {
+            result+= entry.getValue();
+        }
     }
+    if(result == "")
+    {
+        return Integer.toString(value);
+    }
+
    return result;
 }
-
 }

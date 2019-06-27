@@ -73,4 +73,10 @@ public class RaindropTest {
     {
         raindrop.convertToString(-30);
     }
+
+    @Test
+    public void PlungTest()
+    {
+        Assert.assertEquals("PlingPlung",raindrop.convertToString(81));
+    }
 }
